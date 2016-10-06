@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - dist\app\components\add-item.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>dist\app\components\add-item.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">78.43</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">93</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">23.07</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.22</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">System.register([&#039;react&#039;, &#039;../services/todo-actions&#039;, &#039;../../todo-lib/redux/actions&#039;, &#039;monet&#039;], function(exports_1, context_1) {
+    &quot;use strict&quot;;
+    var __moduleName = context_1 &amp;&amp; context_1.id;
+    var __extends = (this &amp;&amp; this.__extends) || function (d, b) {
+        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+    var React, react_1, todo_actions_1, actions_1, monet_1;
+    var AddItem;
+    function ioNoop() {
+        return monet_1.IO(function () { });
+    }
+    return {
+        setters:[
+            function (React_1) {
+                React = React_1;
+                react_1 = React_1;
+            },
+            function (todo_actions_1_1) {
+                todo_actions_1 = todo_actions_1_1;
+            },
+            function (actions_1_1) {
+                actions_1 = actions_1_1;
+            },
+            function (monet_1_1) {
+                monet_1 = monet_1_1;
+            }],
+        execute: function() {
+            AddItem = (function (_super) {
+                __extends(AddItem, _super);
+                function AddItem() {
+                    _super.call(this);
+                    console.log(&#039;new AddItem()&#039;);
+                }
+                Object.defineProperty(AddItem.prototype, &quot;itemTypeText&quot;, {
+                    get: function () {
+                        return this.props.itemType.replace(/([a-z])([A-Z])/g, &#039;$1 $2&#039;);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(AddItem.prototype, &quot;itemTypeClass&quot;, {
+                    get: function () {
+                        return &quot;add-item add-&quot; + this.itemTypeText.toLowerCase().replace(&#039; &#039;, &#039;-&#039;);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(AddItem.prototype, &quot;inputRef&quot;, {
+                    get: function () {
+                        return monet_1.Maybe.fromNull(this.refs[&#039;input&#039;]);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                AddItem.prototype.isEnterEvent = function (event) {
+                    return event.keyCode === 13 || event.which === 13;
+                };
+                AddItem.prototype.addItem = function (input) {
+                    var _this = this;
+                    return input.filter(function (input) { return Boolean(input.value); }).map(function (input) { return monet_1.IO(function () {
+                        todo_actions_1.todoActions.addItem(actions_1.AddItemType[_this.props.itemType], input.value);
+                        input.value = &#039;&#039;; // FIXME: SideEffect - maybe move to store ?
+                    }); }).orJust(ioNoop()).run();
+                };
+                AddItem.prototype.getClickHandler = function () {
+                    var _this = this;
+                    return function () {
+                        _this.addItem(_this.inputRef);
+                    };
+                };
+                AddItem.prototype.getKeyEnterHandler = function () {
+                    var _this = this;
+                    return function (event) {
+                        _this.addItem(monet_1.Some(event).filter(_this.isEnterEvent).flatMap(function () { return _this.inputRef; }));
+                    };
+                };
+                AddItem.prototype.componentDidMount = function () {
+                    var _this = this;
+                    this.inputRef.filter(function () { return _this.props.itemType === &#039;Todo&#039;; }).map(function (input) { return monet_1.IO(function () {
+                        input.focus();
+                    }); }).orJust(ioNoop()).run();
+                };
+                AddItem.prototype.render = function () {
+                    return (React.createElement(&quot;div&quot;, {className: this.itemTypeClass}, React.createElement(&quot;input&quot;, {ref: &quot;input&quot;, type: &quot;text&quot;, onKeyUp: this.getKeyEnterHandler()}), React.createElement(&quot;button&quot;, {onClick: this.getClickHandler(), className: &quot;ion&quot;}, React.createElement(&quot;span&quot;, null, &quot;Add &quot;, this.itemTypeText))));
+                };
+                return AddItem;
+            }(react_1.Component));
+            exports_1(&quot;AddItem&quot;, AddItem);
+        }
+    }
+});</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+[submodule "todo-lib"]
+	path = todo-lib
+	url = https://github.com/evojam/redux-todo-lib.git
