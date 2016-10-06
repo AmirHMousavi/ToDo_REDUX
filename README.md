@@ -1,4 +1,4 @@
-For just visitng the report created by [Plato](https://github.com/es-analysis/plato) go to report folder in each project and open index.html file. this report is generated from the transpiled code of .ts to .js in dist folder after the build
+For just visitng the report created by [Plato](https://github.com/es-analysis/plato) go to report folder in each project and open index.html file. this report is generated from the transpiled code in './dist/app' folder after the build
 
 * for angular report [click here] (https://github.com/AmirHMousavi/ToDo_REDUX/blob/master/angular2-redux-sample-app/report/index.html)
 * for react report [click here] (https://github.com/AmirHMousavi/ToDo_REDUX/blob/master/react-redux-sample-app/report/index.html)
